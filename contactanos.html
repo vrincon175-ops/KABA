@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contáctanos | KABA</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-box">
+      <div class="logo">KABA</div>
+      <div class="spinner"></div>
+      <div class="percent" id="percentText">0%</div>
+      <div class="progress">
+        <div class="bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR VERTICAL -->
+  <nav class="navbar">  
+    <div class="logo">SUAVIDAD Y BRILLO</div>
+    <ul class="nav-links">
+      <li><a href="Kaba.html">Inicio</a></li>
+      <li><a href="servicios.html">Mis servicios</a></li>
+      <li><a href="promociones.html">Promociones</a></li>
+      <li><a href="contactanos.html" class="active">Contáctenos</a></li>
+    </ul>
+    <div class="footer-nav">
+      <p>Página creada por <br /> <strong>Est. Valentina Rincón</strong></p>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content" id="app">
+
+    <!-- ENCABEZADO -->
+    <header class="hero">
+      <h1>Contáctanos</h1>
+      <h2>Queremos saber de ti 💌</h2>
+    </header>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="contacto" aria-label="Formulario de contacto">
+      <h2>Envíanos tu mensaje</h2>
+      <form id="contactForm" class="formulario" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre..." />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" />
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </section>
+
+    <!-- INFORMACIÓN DE CONTACTO -->
+    <section class="info-contacto" aria-label="Información adicional">
+      <h2>También puedes contactarnos en:</h2>
+      <ul>
+        <li><strong>Dirección:</strong> Calle 123 #45-67, Bogotá, Colombia</li>
+        <li><strong>Teléfono:</strong> +57 310 555 1234</li>
+        <li><strong>Email:</strong> contacto@kaba.com</li>
+        <li><strong>Horario:</strong> Lunes a sábado, 9:00 a.m. - 7:00 p.m.</li>
+      </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 Productos para el cuidado de tu piel y tu cabello</p>
+      <div class="social">
+        <a href="#" aria-label="Facebook">Facebook</a> |
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </div>
+      <div class="footer-nav">
+        <strong>KABA</strong> - Diseño con amor 💖
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- SCRIPT DE VALIDACIÓN DEL FORMULARIO -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+      const status = document.getElementById("formStatus");
+
+      if (!nombre || !email || !mensaje) {
+        status.textContent = "Por favor completa todos los campos obligatorios.";
+        status.style.color = "red";
+        return;
+      }
+
+      status.textContent = "Mensaje enviado correctamente. ¡Gracias por contactarnos!";
+      status.style.color = "green";
+
+      // Limpia el formulario
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
